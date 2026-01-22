@@ -6,25 +6,22 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Table extends Component
+class AirlinesTable extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public array $cabeceras,
-        public array $datos
+        public Array $cabeceras,
+        public Array $datos
     )
-    {
-        //
-   
-    }
+    {}
 
     /**
      * Get the view / contents that represent the component.
      */
     public function render(): View|Closure|string
     {
-        return view('components.table');
+        return view('components.airlines-table');
     }
 }

@@ -7,6 +7,7 @@
   </tr>
   @foreach ($datos as $filadatos)
         <tr>
+          {{-- @dump($datos); --}}
             @foreach($filadatos as $dato)
             <td>{{$dato}}</td>
             @endforeach

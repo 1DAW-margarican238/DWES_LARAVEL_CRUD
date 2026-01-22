@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('airlines', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->enum('country',['es','en']);
-            $table->integer('valor')->default(0);
+            $table->string('email');
+            $table->enum('country',['es','en','fr']);
             $table->timestamps();
         });
     }

@@ -16,15 +16,24 @@ class AirlineSeeder extends Seeder
         DB::table('airlines')->insert([
             [
             'name' => 'Iberia',
+            'email'=> 'iberia@gmail.com',
             'country' => 'es',
             'created_at' => now(),
             'updated_at' => now(),
             ],
             [
             'name' => 'Ryanair',
+            'email'=>'ryanair@gmail.com',
             'country' => 'en',
             'created_at' => now(),
             'updated_at' => now(),
+            ],
+            [
+            'name' => 'France Airlines',
+            'email'=>'frairlines@gmail.com',
+            'country' => 'fr',
+            'created_at' => now(),
+            'updated_at' => now(), 
             ]
     
     ]);

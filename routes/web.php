@@ -7,15 +7,13 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', function () {
-    return view('test');
-});
-Route::get('/test2', function () {
-    return view('test2');
-});
 Route::get('/airline', [AirlineController::class,'index']);
 
+Route::get('/airline/show/{id}',[AirlineController::class,'show'])->name('airline.show');
 
-Route::get('/create_airline', [AirlineController::class,'store']);
+Route::get('airline/edit/{id}',[AirlineController::class,'edit'])->name('airline.edit');
+
+
+// Route::get('/create_airline', [AirlineController::class,'store']);
 
 

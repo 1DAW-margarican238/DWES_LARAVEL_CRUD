@@ -6,14 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class AppLayout extends Component
+class airlineShow extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct(
-        public string|null $title
-    )
+    public function __construct()
     {
         //
     }
@@ -23,6 +21,6 @@ class AppLayout extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.app-layout');
+        return view('components.airline-show');
     }
 }

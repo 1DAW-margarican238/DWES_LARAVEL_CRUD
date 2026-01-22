@@ -13,10 +13,10 @@ class AirlineController extends Controller
     public function index()
     {
         //
-        $airlines = Airline::select('name','country')->get();
+        $airlines = Airline::select('id','name','country','email')->get();
         
         return view('airline',[
-            'cabeceras' => ['Name', 'Country'],
+            'cabeceras' => ['ID','Name', 'Country', 'email'],
             'datos' => $airlines->toArray()
         ]);
         
@@ -39,11 +39,6 @@ class AirlineController extends Controller
             'name'=>'required|max:255',
             'country'=>'required',
         ]);
-
-        
-
-
-
         
     }
 
@@ -52,7 +47,10 @@ class AirlineController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('show-airline',[
+            'cabeceras' => ['ID','Name', 'Country', 'email'],
+            'datos' => [Airline::findOrFail($id)->only('id','name','country','email')],
+        ]);
     }
 
     /**
@@ -60,7 +58,7 @@ class AirlineController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('edit-airline');
     }
 
     /**
